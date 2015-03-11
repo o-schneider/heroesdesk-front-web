@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+        
+<!-- TODO JPA : handle case where no-js stays and require js activation -->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Heroes Desk</title>
+        <meta name="description" content="Helping heroes helping out.">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+
+        <link rel="stylesheet" href="css/main.css">
+        <script src="js/vendor/modernizr-2.6.2.min.js"></script>
+        <!-- TODO JPA : decide whether we support IE8, if not I think we should be able to skip modernizr-->
+    </head>
+    <body>
+        <!--[if lte IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+
+
+    <header role="banner">
+         <nav role="navigation" class="navbar navbar-static-top navbar-default">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                   <span class="icon-bar"></span>
+                   <span class="icon-bar"></span>
+                   <span class="icon-bar"></span>
+                </button>            
+                <a class="navbar-brand" href="index.html">Heroes Desk</a>
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li class="active"><a href="index.html">Desk</a></li>
+                    <li><a href="#">Search</a></li>
+                    <li><a href="#">Projects?</a></li>
+                    <li><a href="#">Activity</a></li>
+                </ul> 
+            </div>
+        </div>
+     </nav>
+    </header>
+    <main role="main">
+    Desk of <b>All</b>/perso/pro/... projects
+        <h1>In progress</h1>
+        <p>Do the docker image for frontend dev</p>
+        <p>Choose tools for js lib dep management</p>        
+        <h1>To qualify</h1>
+        <p>Random bug</p>
+        <p>Weekly meeting</p>
+        <h1>To do</h1>
+        <p>Watch thibault's fav talk</p>
+        <p>Build up the UX</p>
+    </main>
+    <footer role="contentinfo">
+        <p><small>Copyright &copy; Company Name</small></p><!--TODO : decide copyrigth matters-->
+    </footer>
+
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.10.2.min.js"><\/script>')</script>
+        <script src="js/plugins.js"></script>
+        <script src="js/main.js"></script>
+
+        <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+        <script>
+            (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
+            function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
+            e=o.createElement(i);r=o.getElementsByTagName(i)[0];
+            e.src='//www.google-analytics.com/analytics.js';
+            r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
+            ga('create','UA-XXXXX-X');ga('send','pageview');
+        </script>
+    </body>
+</html>
