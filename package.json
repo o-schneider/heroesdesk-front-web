@@ -1,0 +1,14 @@
+{
+  "name": "heroesdesk-front-web",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "bootstrap": "^3.3.2",
+    "browserify": "^9.0.3",
+    "express": "^4.12.2",
+    "jquery": "^2.1.3",
+    "less-middleware": "^2.0.1",
+    "react": "^0.13.0"
+  }
+}
