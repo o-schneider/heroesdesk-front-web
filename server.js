@@ -15,4 +15,4 @@ app.use(less(webAppPath));
 app.use('/js', browserify('./www/app'));
 app.use('/', express.static(webAppPath));
 
-app.listen(3000);
+app.listen(8080);
