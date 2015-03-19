@@ -10,6 +10,7 @@
     "express": "^4.12.2",
     "jquery": "^2.1.3",
     "less-middleware": "^2.0.1",
-    "react": "^0.13.0"
+    "react": "^0.13.0",
+    "react-bootstrap": "^0.17.0"
   }
 }
