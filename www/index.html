@@ -11,32 +11,43 @@
 <body>
 <header role="banner">
     <nav role="navigation" class="navbar navbar-static-top navbar-default">
-        <div class="container">
+        <div class="container-fluid">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="index.html">Heroes Desk</a>
+                <a class="navbar-brand navbar-left" href="index.html">Heroes Desk</a>
             </div>
             <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
+                <ul class="nav navbar-nav navbar-left">
                     <li class="active"><a href="index.html">Desk</a></li>
                     <li><a href="#">Search</a></li>
-                    <li><a href="#">Projects?</a></li>
+                    <li><a href="#">Projects</a></li>
                     <li><a href="#">Activity</a></li>
                 </ul>
+                <form class="navbar-form navbar-right" role="search">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Search">
+                    </div>
+                    <button type="submit" class="btn btn-default"><i class="fa fa-search"></i></button>
+                </form>                
             </div>
+
         </div>
     </nav>
 </header>
 <main role="main">
-    <div id="app"></div>
+    <div id="app">
+        <h2>In progress</h2>
+        <h2>To qualify</h2>
+        <h2>To do</h2>
+    </div>
 </main>
 <footer role="contentinfo">
     <p>
-        <small>Copyright &copy; Company Name</small>
+        <small>TODO Copyright &copy; rese</small>
     </p>
 </footer>
 <script src="js/main.js"></script>
