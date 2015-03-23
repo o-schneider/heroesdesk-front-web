@@ -5,7 +5,7 @@ The web client of HeroesDesk. In the end should communicate via Rest/push with t
 npm install
 npm start
 
-and http://localhost:3000 :)
+and http://localhost:8080 :)
 
 Everything is auto reloaded.
 
