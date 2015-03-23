@@ -1,7 +1,7 @@
 /** @jsx React.DOM */
 
 //$ = jQuery = require('jquery');
-//var React = require('react');
+//var Bootstrap = require('react-bootstrap');
 //var bootstrap = require('bootstrap');   // On devra passer via React-bootstrap si on utilise React
 
 var HeroesHeader = React.createClass({
@@ -37,10 +37,10 @@ var HeroesHeader = React.createClass({
                         </ul>
 
                         <form className="navbar-form navbar-right" role="search">
-                            <div class="form-group">
-                                <input type="text" class="form-control" placeholder="Search"></input>
+                            <div classNmae="form-group">
+                                <input type="text" className="form-control" placeholder="Search"/>
+                                <button type="submit" className="btn btn-default"><i className="fa fa-search"></i></button>
                             </div>
-                            <button type="submit" class="btn btn-default"><i className="fa fa-search"></i></button>
                         </form>
                     </div>
                 </div>
