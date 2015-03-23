@@ -7,45 +7,45 @@
 var HeroesHeader = React.createClass({
     render: function() {
         return  <header role="banner">
-                    <nav role="navigation" class="navbar navbar-static-top navbar-default">
-                        <div class="container-fluid">
-                            <div class="navbar-header">
-                                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                                    <span class="icon-bar"></span>
-                                    <span class="icon-bar"></span>
-                                    <span class="icon-bar"></span>
-                                </button>
-                                <a class="navbar-brand navbar-left" href="index.html">Heroes Desk</a><p class="navbar-text visible-xs-block">Desk (todo wire through React)</p>
-                            </div>
-                            <div class="navbar-collapse collapse">
+            <nav role="navigation" className="navbar navbar-static-top navbar-default">
+                <div className="container-fluid">
+                    <div className="navbar-header">
+                        <button type="button" className="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                            <span className="icon-bar"></span>
+                            <span className="icon-bar"></span>
+                            <span className="icon-bar"></span>
+                        </button>
+                        <a className="navbar-brand navbar-left" href="index.html">Heroes Desk</a><p className="navbar-text visible-xs-block">Desk (todo wire through React)</p>
+                    </div>
+                    <div className="navbar-collapse collapse">
 
-                                <ul class="nav navbar-nav navbar-left">
-                                    <li class="active"><a href="index.html">Desk</a></li>
-                                    <li><a href="#">Search</a></li>
-                                    <li><a href="#">Projects</a></li>
-                                    <li><a href="#">Activity</a></li>
+                        <ul className="nav navbar-nav navbar-left">
+                            <li className="active"><a href="index.html">Desk</a></li>
+                            <li><a href="#">Search</a></li>
+                            <li><a href="#">Projects</a></li>
+                            <li><a href="#">Activity</a></li>
+                        </ul>
+                        <ul className="nav navbar-nav navbar-right">
+                            <li className="dropdown">
+                                <a href="#" className="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">HerosName<span className="caret"></span></a>
+                                <ul className="dropdown-menu" role="menu">
+                                    <li><a href="#">Account</a></li>
+                                    <li className="divider"></li>
+                                    <li><a href="#">Logout</a></li>
                                 </ul>
-                                <ul class="nav navbar-nav navbar-right">
-                                    <li class="dropdown">
-                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">HerosName<span class="caret"></span></a>
-                                        <ul class="dropdown-menu" role="menu">
-                                            <li><a href="#">Account</a></li>
-                                            <li class="divider"></li>
-                                            <li><a href="#">Logout</a></li>
-                                        </ul>
-                                    </li>
-                                </ul>
+                            </li>
+                        </ul>
 
-                                <form class="navbar-form navbar-right" role="search">
-                                    <div class="form-group">
-                                        <input type="text" class="form-control" placeholder="Search"></input>
-                                    </div>
-                                    <button type="submit" class="btn btn-default"><i class="fa fa-search"></i></button>
-                                </form>
+                        <form className="navbar-form navbar-right" role="search">
+                            <div class="form-group">
+                                <input type="text" class="form-control" placeholder="Search"></input>
                             </div>
-                        </div>
-                    </nav>
-                </header>;
+                            <button type="submit" class="btn btn-default"><i className="fa fa-search"></i></button>
+                        </form>
+                    </div>
+                </div>
+            </nav>
+        </header>;
 
     }
 });
