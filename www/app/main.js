@@ -1,9 +1,10 @@
-$ = jQuery = require('jquery');
-var React = require('react');
-var bootstrap = require('bootstrap');
+import React from 'react';
 
-window.onload = function() {
-//  var appNode = document.getElementById("app");
-//  var helloWorldElement = React.createElement("p", {}, "Hello World");
-//  React.render(helloWorldElement, appNode);
+window.onload = function () {
+  const appNode = document.getElementById("app");
+  React.render(<div>
+    <h2>In progress</h2>
+    <h2>To qualify</h2>
+    <h2>To do</h2>
+  </div>, appNode);
 };

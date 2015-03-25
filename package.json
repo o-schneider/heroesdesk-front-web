@@ -1,16 +1,18 @@
 {
   "name": "heroesdesk-front-web",
   "scripts": {
-    "start": "node server.js"
+    "start": "node server.js",
+    "watch": "watchify www/app/main.js -t babelify -o www/dist/bundle.js --debug --verbose"
   },
   "dependencies": {
+    "babelify": "^5.0.4",
     "bootstrap": "^3.3.2",
     "browserify": "^9.0.3",
-    "browserify-middleware": "^5.0.2",
     "express": "^4.12.2",
     "jquery": "^2.1.3",
     "less-middleware": "^2.0.1",
     "react": "^0.13.0",
-    "react-bootstrap": "^0.17.0"
+    "react-bootstrap": "^0.17.0",
+    "watchify": "^2.6.0"
   }
 }
