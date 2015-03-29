@@ -1,8 +1,8 @@
 {
   "name": "heroesdesk-front-web",
   "scripts": {
-    "start": "node server.js",
-    "watch": "watchify www/app/main.js -t babelify -o www/dist/bundle.js --debug --verbose"
+    "start": "node server/server.js",
+    "dev": "node server/dev.js"
   },
   "dependencies": {
     "babelify": "^5.0.4",

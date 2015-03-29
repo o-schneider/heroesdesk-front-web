@@ -2,11 +2,14 @@ var fs = require("fs");
 var browserify = require("browserify");
 var watchify = require("watchify");
 var babelify = require("babelify");
+var server = require("./server");
+var params = require("./params");
 
 var b = browserify({cache: {}, packageCache: {}, debug: true})
   .transform(babelify)
-  .add("./www/app/main.js");
-var distPath = __dirname + '/www/dist';
+  .add(params.WEB_APP_PATH + "/app/main.js");
+
+var distPath = params.WEB_APP_PATH + "/dist";
 
 var build = function () {
   b.bundle()
@@ -25,3 +28,4 @@ watchify(b)
   });
 
 build();
+server.start(8080);
