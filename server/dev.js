@@ -2,6 +2,7 @@ var fs = require("fs");
 var browserify = require("browserify");
 var watchify = require("watchify");
 var babelify = require("babelify");
+var notifier = require('node-notifier');
 var server = require("./server");
 var params = require("./params");
 
@@ -14,7 +15,11 @@ var distPath = params.WEB_APP_PATH + "/dist";
 var build = function () {
   b.bundle()
     .on("error", function (err) {
-      console.error("Error : ", err.message)
+      console.error("Error : ", err.message);
+      notifier.notify({
+        'title': 'Babel build failed',
+        'message': err.message
+      });
     })
     .pipe(fs.createWriteStream(distPath + "/bundle.js"));
 };
