@@ -2,8 +2,8 @@
 The web client of HeroesDesk. In the end should communicate via Rest/push with the backend.
 
 # how to develop
-npm install
-npm start
+npm install  
+npm run dev
 
 and http://localhost:8080 :)
 
