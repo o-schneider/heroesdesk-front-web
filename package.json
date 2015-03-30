@@ -1,5 +1,6 @@
 {
   "name": "heroesdesk-front-web",
+  "repository": "https://github.com/HeroesDesk/heroesdesk-front-web",
   "scripts": {
     "start": "node server/server.js",
     "dev": "node server/dev.js"
@@ -13,6 +14,7 @@
     "less-middleware": "^2.0.1",
     "react": "^0.13.0",
     "react-bootstrap": "^0.17.0",
+    "react-router": "^0.13.2",
     "watchify": "^2.6.0"
   }
 }
