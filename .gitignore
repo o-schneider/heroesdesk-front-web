@@ -38,4 +38,4 @@ node_modules
 *.ipr
 *.iws
 
-www/dist
+www/dist/*.js
