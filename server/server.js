@@ -11,7 +11,7 @@ module.exports.start = function(port) {
     next();
   });
 
-  app.use(less(params.WEB_APP_PATH));
+  app.use(less(params.SRC_LESS_PATH, {dest: params.WEB_APP_PATH}));
   app.use('/', express.static(params.WEB_APP_PATH));
 
   app.listen(port, function () {

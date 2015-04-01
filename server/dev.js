@@ -8,9 +8,7 @@ var params = require("./params");
 
 var b = browserify({cache: {}, packageCache: {}, debug: true})
   .transform(babelify)
-  .add(params.WEB_APP_PATH + "/app/main.js");
-
-var distPath = params.WEB_APP_PATH + "/dist";
+  .add(params.SRC_JS_PATH + "/main.js");
 
 var build = function () {
   b.bundle()
@@ -21,7 +19,7 @@ var build = function () {
         'message': err.message
       });
     })
-    .pipe(fs.createWriteStream(distPath + "/bundle.js"));
+    .pipe(fs.createWriteStream(params.WEB_APP_PATH + "/bundle.js"));
 };
 
 watchify(b)
