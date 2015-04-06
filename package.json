@@ -2,8 +2,9 @@
   "name": "heroesdesk-front-web",
   "repository": "https://github.com/HeroesDesk/heroesdesk-front-web",
   "scripts": {
-    "start": "node server/server.js",
-    "dev": "node server/dev.js"
+    "start": "node server/start.js",
+    "dev": "node server/dev.js",
+    "build": "node server/package.js"
   },
   "dependencies": {
     "bootstrap": "^3.3.2",

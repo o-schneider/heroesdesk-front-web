@@ -9,7 +9,7 @@ var failed = false;
 var okIcon = __dirname + "/icons/ok.png";
 var errorIcon = __dirname + "/icons/error.png";
 
-var errorCb = function (err) {
+var browserify = build.init(function (err) {
   failed = true;
   console.error("Error : ", err.message);
   notifier.notify({
@@ -17,9 +17,17 @@ var errorCb = function (err) {
     "message": err.message,
     icon: errorIcon
   });
-};
-
-var browserify = build.init(errorCb);
+}, function () {
+  if (failed) {
+    console.log("back to normal");
+    failed = false;
+    notifier.notify({
+      "title": "Babel build back to normal",
+      "message": "No more errors",
+      icon: okIcon
+    });
+  }
+});
 
 watchify(browserify.browserify)
   .on("log", function (msg) {
@@ -27,16 +35,6 @@ watchify(browserify.browserify)
   }).on("update", function () {
     console.log("File changed. Rebundling !");
     browserify.build();
-  }).on("bytes", function () {
-    if (failed) {
-      console.log("back to normal");
-      failed = false;
-      notifier.notify({
-        "title": "Babel build back to normal",
-        "message": "No more errors",
-        icon: okIcon
-      });
-    }
   });
 
 browserify.build();
