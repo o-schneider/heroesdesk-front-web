@@ -20,6 +20,7 @@
     "less": "^2.4.0",
     "less-middleware": "^2.0.1",
     "mocha": "^2.2.1",
+    "node-lessify": "0.0.10",
     "node-notifier": "^4.1.2",
     "sinon": "^1.14.1",
     "watchify": "^2.6.0"
