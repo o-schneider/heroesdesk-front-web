@@ -9,3 +9,5 @@ and http://localhost:8080 :)
 
 Everything is auto reloaded.
 
+Compilation notification icons coming from the moka icon theme (mokaproject.com)
+
