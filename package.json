@@ -4,7 +4,10 @@
   "scripts": {
     "start": "node server/start.js",
     "dev": "node server/dev.js",
-    "build": "node server/package.js"
+    "build": "node server/package.js",
+    "test": "./node_modules/.bin/mocha --bail --recursive --compilers js:babel/register src/test/unit src/test/ui",
+    "test-unit": "./node_modules/.bin/mocha --bail --recursive --compilers js:babel/register src/test/unit",
+    "test-ui": "./node_modules/.bin/mocha --bail --recursive --compilers js:babel/register src/test/ui"
   },
   "dependencies": {
     "bootstrap": "^3.3.2",
@@ -15,15 +18,18 @@
     "react-router": "^0.13.2"
   },
   "devDependencies": {
+    "babel": "^5.1.8",
     "babelify": "^5.0.4",
     "browserify": "^9.0.3",
     "casperjs": "^1.1.0-beta3",
     "less": "^2.4.0",
     "less-middleware": "^2.0.1",
-    "mocha": "^2.2.1",
+    "mocha": "^2.2.4",
     "node-lessify": "0.0.10",
     "node-notifier": "^4.1.2",
+    "should": "^5.2.0",
     "sinon": "^1.14.1",
-    "watchify": "^2.6.0"
+    "watchify": "^2.6.0",
+    "zombie": "^4.0.7"
   }
 }
