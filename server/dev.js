@@ -30,20 +30,6 @@ var browserify = build.init(function (err) {
       icon: okIcon
     });
   }
-  console.log("Launching casper");
-  var casper = childProcess.spawn("casperjs", ["test", params.TEST_INT_PATH]);
-
-  casper.stdout.on('data', function (data) {
-    console.log('casper out: ' + data);
-  });
-
-  casper.stderr.on('data', function (data) {
-    console.log('casper err: ' + data);
-  });
-
-  casper.on('close', function (code) {
-    console.log('child process exited with code ' + code);
-  });
 });
 
 watchify(browserify.browserify)

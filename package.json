@@ -24,7 +24,6 @@
     "babel": "^5.1.8",
     "babelify": "^5.0.4",
     "browserify": "^9.0.3",
-    "casperjs": "^1.1.0-beta3",
     "less": "^2.4.0",
     "less-middleware": "^2.0.1",
     "mocha": "^2.2.4",
