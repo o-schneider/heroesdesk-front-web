@@ -1,6 +1,9 @@
 {
   "name": "heroesdesk-front-web",
-  "repository": "https://github.com/HeroesDesk/heroesdesk-front-web",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/HeroesDesk/heroesdesk-front-web"
+  },
   "scripts": {
     "start": "node server/start.js",
     "dev": "node server/dev.js",
