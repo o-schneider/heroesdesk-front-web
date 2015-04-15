@@ -10,10 +10,13 @@ require('../less/main.less');
 
 const appNode = document.getElementById("app");
 
-var DefaultRoute = Router.DefaultRoute;
-var Link = Router.Link;
-var Route = Router.Route;
-var RouteHandler = Router.RouteHandler;
+var {
+  Route,
+  Redirect,
+  RouteHandler,
+  Link
+  } = Router;
+
 
 var App = React.createClass({
   render: function () {
@@ -25,8 +28,6 @@ var App = React.createClass({
             <li><Link to="search">Search</Link></li>
           </ul>
         </header>
-        <h1>Desk</h1>
-
         <RouteHandler/>
       </div>
     );
@@ -35,9 +36,9 @@ var App = React.createClass({
 
 var routes = (
   <Route name="app" path="/" handler={App}>
+    <Redirect from="/" to="desk" />
     <Route name="desk" handler={Desk}/>
     <Route name="search" handler={Search}/>
-    <DefaultRoute handler={Desk}/>
   </Route>
 );
 
