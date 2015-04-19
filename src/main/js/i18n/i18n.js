@@ -1,28 +1,29 @@
 import React from 'react';
-import ReactIntl from 'react-intl';
 
-var IntlMixin       = ReactIntl.IntlMixin;
-var FormattedNumber = ReactIntl.FormattedNumber;
-var FormattedMessage = ReactIntl.FormattedMessage;
+import {LanguageSelector} from './languageSelector.js';
+import {I18nSample} from './i18nSample.js';
+
+import {languages} from '../../lang/lang.js';
 
 export var I18n = React.createClass({
-    mixins: [IntlMixin],
-
+    getInitialState : function() {
+        return { languageIndex : 0 }
+    },
+    updateLanguage: function( languageIndex ) {
+        this.setState( { languageIndex : languageIndex } );
+    },
     render: function () {
+        var languageIndex = this.state.languageIndex;
+        var language = languages[languageIndex];
+        var translation = language.translation;
         return (
             <div>
-                <ul>
-                    <li><FormattedNumber value={1000} style="currency" currency="USD" /></li>
-                    <li><FormattedMessage message="Hello {world}"
-                                              world = "toi"/></li>
-                    <li>{this.props.text1}</li>
-                      <li><FormattedMessage
-                        message={this.getIntlMessage('photos')}
-                        name="Annie"
-                        numPhotos={1000}
-                        takenDate={Date.now()} /></li>
-                    <li>testfin</li>
-                </ul>
+                <div>
+                    <LanguageSelector languageIndex={languageIndex} languages={languages} changeHandler={this.updateLanguage}/>
+                </div>
+                <div>
+                    <I18nSample language={language} {...translation} />
+                </div>
             </div>
         );
     }
