@@ -41,4 +41,4 @@ watchify(browserify.browserify)
   });
 
 browserify.build();
-server.start(8080);
+server.hdStart();

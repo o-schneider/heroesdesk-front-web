@@ -1,1 +1,1 @@
-require("./server").start(8080);
+require("./server").hdStart();
