@@ -1,9 +1,5 @@
 import React from 'react';
-import ReactIntl from 'react-intl';
-
-var IntlMixin        = ReactIntl.IntlMixin;
-var FormattedNumber  = ReactIntl.FormattedNumber;
-var FormattedMessage = ReactIntl.FormattedMessage;
+import {IntlMixin, FormattedNumber, FormattedMessage} from 'react-intl';
 
 export var I18nSample = React.createClass({
     mixins: [IntlMixin],
