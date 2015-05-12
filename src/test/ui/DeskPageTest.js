@@ -5,9 +5,9 @@ const params = require("../../../server/params");
 
 const Browser = require('zombie');
 
-var port = 3002;
-
-describe('Home page', function () {
+var port = 30221;
+/*
+describe('Desk page', function () {
 
   Browser.localhost('localhost', port);
   Browser.userAgent = "Khrome";
@@ -17,16 +17,22 @@ describe('Home page', function () {
 
   before(function (done) {
     server.start(function () {
-      browser.visit('/', done);
+      browser.visit('/#/desk', done);
     });
   });
 
-  it('should be the desk page', function () {
+  it('is accessible through /#/desk', function () {
     browser.assert.text('.active', 'Desk');
   });
 
-  after(function (){
-    server.stop();
-  });
 
-});
+   before(function (done) {
+     browser.visit('/desk', done);
+   });
+
+   it('is accessible through /desk', function () {
+     browser.assert.text('.active', 'Desk');
+   });
+
+
+});*/

@@ -1,1 +1,1 @@
-require("./server").hdStart();
+require("./heroesDeskServer").start();

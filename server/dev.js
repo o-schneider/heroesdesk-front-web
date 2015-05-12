@@ -2,10 +2,10 @@
 
 var watchify = require("watchify");
 var notifier = require("node-notifier");
-var childProcess = require('child_process')
+var childProcess = require('child_process');
 
 var params = require('./params');
-var server = require("./server");
+var server = require("./heroesDeskServer");
 var build = require("./build");
 
 var failed = false;
@@ -41,4 +41,4 @@ watchify(browserify.browserify)
   });
 
 browserify.build();
-server.hdStart();
+server.start();
