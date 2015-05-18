@@ -7,7 +7,7 @@
   "scripts": {
     "start": "node src/server/start.js",
     "dev": "node src/server/dev.js",
-    "testSite": "node src/server/testSite.js",
+    "dev-test": "node src/server/devTest.js",
     "build": "node src/server/package.js",
     "test": "./node_modules/.bin/mocha --check-leaks --throw-deprecation --growl --bail --recursive --compilers js:babel/register src/test/unit src/test/ui",
     "test-unit": "./node_modules/.bin/mocha --check-leaks --throw-deprecation --growl --bail --recursive --compilers js:babel/register src/test/unit",

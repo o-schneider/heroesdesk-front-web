@@ -1,7 +1,7 @@
 "use strict";
 
-const HttpServer = require("../../../server/HttpServer");
-const params = require("../../../server/params");
+const HttpServer = require("../../server/HttpServer");
+const params = require("../../server/params");
 
 const Browser = require('zombie');
 

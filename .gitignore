@@ -39,3 +39,5 @@ node_modules
 *.iws
 
 www/bundle.js
+wwwTest/bundle.js
+

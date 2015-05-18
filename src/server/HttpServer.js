@@ -2,7 +2,6 @@
 
 var express = require('express');
 var less = require('less-middleware');
-var params = require("./params");
 
 function HttpServer(port, staticServedPath, logRequest) {
   this.port = port;

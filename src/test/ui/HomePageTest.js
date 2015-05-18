@@ -1,7 +1,7 @@
 "use strict";
 
-const HttpServer = require("../../../server/HttpServer");
-const params = require("../../../server/params");
+const HttpServer = require("../../server/HttpServer");
+const params = require("../../server/params");
 
 const Browser = require('zombie');
 
@@ -12,7 +12,7 @@ describe('Home page', function () {
   Browser.localhost('localhost', port);
   Browser.userAgent = "Khrome";
 
-  const server = new HttpServer(port, params.WEB_APP_PATH);
+  const server = new HttpServer(port, params.WEB_APP_PATH, false);
   const browser = new Browser();
 
   before(function (done) {

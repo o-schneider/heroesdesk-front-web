@@ -2,20 +2,18 @@
 
 import React from 'react';
 import Router from 'react-router';
-
-import Desk from './desk/desk.js';
-import {Search} from './search/search.js';
+import {I18n} from './i18n/i18n.js';
 
 require('../less/main.less');
 
 const appNode = document.getElementById("app");
 
 var {
-    Route,
-    Redirect,
-    RouteHandler,
-    Link
-    } = Router;
+  Route,
+  Redirect,
+  RouteHandler,
+  Link
+  } = Router;
 
 var App = React.createClass({
   render: function () {
@@ -23,9 +21,8 @@ var App = React.createClass({
       <div>
         <header>
           <ul>
-            <li><Link to="desk">Desk</Link></li>
-            <li><Link to="search">Search</Link></li>
-            </ul>
+            <li><Link to="i18n">I18n</Link></li>
+          </ul>
         </header>
         <RouteHandler/>
       </div>
@@ -34,10 +31,8 @@ var App = React.createClass({
 });
 
 var routes = (
-  <Route name="app" path="" handler={App}>
-    <Redirect from="/" to="desk" />
-    <Route name="desk" handler={Desk}/>
-    <Route name="search" handler={Search}/>
+  <Route name="app" path="/" handler={App}>
+    <Route name="i18n" handler={I18n}/>
   </Route>
 );
 
