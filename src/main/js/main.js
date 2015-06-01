@@ -34,7 +34,7 @@ var App = React.createClass({
 });
 
 var routes = (
-  <Route name="app" path="" handler={App}>
+  <Route name="app" path="/" handler={App}>
     <Redirect from="/" to="desk" />
     <Route name="desk" handler={Desk}/>
     <Route name="search" handler={Search}/>

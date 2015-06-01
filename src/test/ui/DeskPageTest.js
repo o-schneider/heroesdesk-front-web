@@ -5,14 +5,12 @@ const params = require("../../server/params");
 
 const Browser = require('zombie');
 
-var port = 30221;
-/*
 describe('Desk page', function () {
 
-  Browser.localhost('localhost', port);
+  Browser.localhost('localhost', params.UI_TEST_PORT);
   Browser.userAgent = "Khrome";
 
-  const server = new HttpServer(port, params.WEB_APP_PATH);
+  const server = new HttpServer(params.UI_TEST_PORT, params.WEB_APP_PATH, false);
   const browser = new Browser();
 
   before(function (done) {
@@ -25,14 +23,8 @@ describe('Desk page', function () {
     browser.assert.text('.active', 'Desk');
   });
 
+  after(function (){
+    server.stop();
+  });
 
-   before(function (done) {
-     browser.visit('/desk', done);
-   });
-
-   it('is accessible through /desk', function () {
-     browser.assert.text('.active', 'Desk');
-   });
-
-
-});*/
+});

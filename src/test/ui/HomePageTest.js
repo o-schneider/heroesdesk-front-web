@@ -5,14 +5,12 @@ const params = require("../../server/params");
 
 const Browser = require('zombie');
 
-var port = 3002;
-
 describe('Home page', function () {
 
-  Browser.localhost('localhost', port);
+  Browser.localhost('localhost', params.UI_TEST_PORT);
   Browser.userAgent = "Khrome";
 
-  const server = new HttpServer(port, params.WEB_APP_PATH, false);
+  const server = new HttpServer(params.UI_TEST_PORT, params.WEB_APP_PATH, false);
   const browser = new Browser();
 
   before(function (done) {
