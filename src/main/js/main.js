@@ -11,21 +11,24 @@ require('../less/main.less');
 const appNode = document.getElementById("app");
 
 var {
-    Route,
-    Redirect,
-    RouteHandler,
-    Link
-    } = Router;
+  Route,
+  Redirect,
+  RouteHandler,
+  Link
+  } = Router;
 
 var App = React.createClass({
   render: function () {
     return (
       <div>
-        <header>
-          <ul>
-            <li><Link to="desk">Desk</Link></li>
-            <li><Link to="search">Search</Link></li>
-            </ul>
+        <header role="banner">
+          <nav role="navigation" className="navbar navbar-static-top navbar-default">
+            <div className="container">
+              <ul className="nav navbar-nav">
+                <li><Link activeClassName="active" to="desk">Desk</Link></li>
+                <li><Link activeClassName="active" to="search">Search</Link></li>
+              </ul> </div>
+          </nav>
         </header>
         <RouteHandler/>
       </div>
