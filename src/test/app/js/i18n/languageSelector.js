@@ -12,7 +12,7 @@ export var LanguageSelector = React.createClass({
         }
         return (
             <div>
-                <select value={this.props.languageIndex} onChange={this.handleChange}>
+                <select name='selector' value={this.props.languageIndex} onChange={this.handleChange}>
                     {options}
                 </select>
             </div>
