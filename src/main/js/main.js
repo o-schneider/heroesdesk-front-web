@@ -2,9 +2,12 @@
 
 import React from 'react';
 import Router from 'react-router';
+import ReactBootstrap from 'react-bootstrap';
+import ReactRouterBootstrap from 'react-router-bootstrap';
 
 import Desk from './desk/desk.js';
 import {Search} from './search/search.js';
+
 
 require('../less/main.less');
 
@@ -13,23 +16,28 @@ const appNode = document.getElementById("app");
 var {
   Route,
   Redirect,
-  RouteHandler,
-  Link
+  RouteHandler
   } = Router;
+
+var {
+  NavItemLink
+  } = ReactRouterBootstrap;
+
+var {
+  Nav,
+  Navbar
+  } = ReactBootstrap;
 
 var App = React.createClass({
   render: function () {
     return (
       <div>
-        <header role="banner">
-          <nav role="navigation" className="navbar navbar-static-top navbar-default">
-            <div className="container">
-              <ul className="nav navbar-nav">
-                <li><Link activeClassName="active" to="desk">Desk</Link></li>
-                <li><Link activeClassName="active" to="search">Search</Link></li>
-              </ul> </div>
-          </nav>
-        </header>
+        <Navbar brand={<a href="#">HeroesDesk</a>}>
+          <Nav>
+            <NavItemLink to="desk">Desk</NavItemLink>
+            <NavItemLink to="search">Search</NavItemLink>
+          </Nav>
+        </Navbar>
         <RouteHandler/>
       </div>
     );
@@ -37,10 +45,10 @@ var App = React.createClass({
 });
 
 var routes = (
-  <Route name="app" path="/" handler={App}>
-    <Redirect from="/" to="desk" />
-    <Route name="desk" handler={Desk}/>
-    <Route name="search" handler={Search}/>
+  <Route path="/" handler={App}>
+    <Redirect from="/" to="desk"/>
+    <Route name="desk" path="desk" handler={Desk}/>
+    <Route name="search" path="search" handler={Search}/>
   </Route>
 );
 
