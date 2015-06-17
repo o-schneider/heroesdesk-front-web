@@ -45,10 +45,10 @@ var App = React.createClass({
 });
 
 var routes = (
-  <Route path="/" handler={App}>
-    <Redirect from="/" to="desk"/>
-    <Route name="desk" path="desk" handler={Desk}/>
-    <Route name="search" path="search" handler={Search}/>
+  <Route handler={App}>
+    <Redirect from="/" to="/desk"/>
+    <Route name="desk" path="/desk" handler={Desk}/>
+    <Route name="search" path="/search" handler={Search}/>
   </Route>
 );
 
