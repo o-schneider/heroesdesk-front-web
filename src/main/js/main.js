@@ -6,6 +6,7 @@ import ReactBootstrap from 'react-bootstrap';
 import ReactRouterBootstrap from 'react-router-bootstrap';
 
 import Desk from './desk/desk.js';
+import Issue from './issue/issue.js';
 import {Search} from './search/search.js';
 
 
@@ -46,9 +47,11 @@ var App = React.createClass({
 
 var routes = (
   <Route handler={App}>
-    <Redirect from="/" to="/desk"/>
-    <Route name="desk" path="/desk" handler={Desk}/>
-    <Route name="search" path="/search" handler={Search}/>
+    <Redirect from="/" to="/issues"/>
+    <Redirect from="/desk" to="/issues"/>
+    <Route name="desk" path="issues" handler={Desk}/>
+    <Route name="issue" path="issues/:issueId" handler={Issue}/>
+    <Route name="search" path="search" handler={Search}/>
   </Route>
 );
 

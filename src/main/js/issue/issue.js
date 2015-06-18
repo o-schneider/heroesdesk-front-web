@@ -2,11 +2,14 @@
 
 import React from 'react';
 
+
+
 export default React.createClass({
   render() {
+    var issueId = this.props.params.issueId;
     return (
       <div>
-        issue
+        issue {{issueId}}
       </div>
     );
   }
