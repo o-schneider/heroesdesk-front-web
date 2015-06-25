@@ -1,26 +1,34 @@
 'use strict';
 
 import React from 'react';
-import ReactRouterBootstrap from 'react-router-bootstrap';
-import Uuid from 'node-uuid'
+import { bindActionCreators } from 'redux';
+import { Connector } from 'redux/react';
+import Uuid from 'node-uuid';
+import * as IssueActions from '../issue/actions.js';
 
-var {
-  ButtonLink
-  } = ReactRouterBootstrap;
+export default class Desk {
 
-export default React.createClass({
   render() {
-    var uuid = Uuid.v4();
+    return (
+      <Connector select={state => ({ issues: state.issues })}>
+        {this.renderChild}
+      </Connector>
+    );
+  }
+
+  renderChild({ issues, dispatch }) {
+    const actions = bindActionCreators(IssueActions, dispatch);
     return (
       <div>
-        <ButtonLink to="issue" params={{issueId: uuid}} id="addButton">New</ButtonLink>
-
-        <h1>In progress</h1>
-
-        <h1>To qualify</h1>
-
-        <h1>To do</h1>
+        <button onClick={() => {console.log("fuck"); actions.createIssue(Uuid.v4());} }>CLICK MEEEEE</button>
+        // onClick:
+        // uuid
+        // listenStyore onUuid
+        // createNewEvent fired uuid
+        //
+        Number of issues {issues.length}
       </div>
     );
   }
-});
+
+}

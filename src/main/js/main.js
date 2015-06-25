@@ -9,10 +9,14 @@ import Desk from './desk/desk.js';
 import Issue from './issue/issue.js';
 import {Search} from './search/search.js';
 
+import { createRedux } from 'redux';
+import {Provider} from 'redux/react';
+import * as stores from './stores';
 
 require('../less/main.less');
 
 const appNode = document.getElementById("app");
+const redux = createRedux(stores);
 
 var {
   Route,
@@ -32,15 +36,19 @@ var {
 var App = React.createClass({
   render: function () {
     return (
-      <div>
-        <Navbar brand={<a href="#">HeroesDesk</a>}>
-          <Nav>
-            <NavItemLink to="desk">Desk</NavItemLink>
-            <NavItemLink to="search">Search</NavItemLink>
-          </Nav>
-        </Navbar>
-        <RouteHandler/>
-      </div>
+      <Provider redux={redux}>
+        {() =>
+          <div>
+            <Navbar brand={<a href="#">HeroesDesk</a>}>
+              <Nav>
+                <NavItemLink to="desk">Desk</NavItemLink>
+                <NavItemLink to="search">Search</NavItemLink>
+              </Nav>
+            </Navbar>
+            <RouteHandler/>
+          </div>
+        }
+      </Provider>
     );
   }
 });
