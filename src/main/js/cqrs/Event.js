@@ -8,7 +8,7 @@ import Uuid from 'node-uuid';
 // The type is mandatory.
 //
 // Event's subclasses must wrap their own attributes in the payload and define getters.
-export class Event {
+export default class Event {
 
   constructor(type, payloadOrNull) {
     if(type === null){

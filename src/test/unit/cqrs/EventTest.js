@@ -1,26 +1,10 @@
 'use strict';
 
-//import Event from '../../../main/js/cqrs/Event';
+import Event from '../../../main/js/cqrs/Event';
 import assert from 'assert';
-import Uuid from 'node-uuid';
-// FIXME : use the proper Event class, in main, not the copy/pasted version in this file
-
-class Event {
-
-  constructor(type, payload) {
-    if(type === null) {
-      throw "Type is mandatory";
-    }
-      this.uuid = Uuid.v4();
-    this.type = type;
-    this.payload = payload;
-    Object.freeze(this);
-  }
-}
 
 describe('Event', function () {
   it("has an uuid", function () {
-    console.log("Event " + Event)
     assert(new Event("foo", "bar").uuid !== null);
   });
   it("throws Error if no type provided", function () {
@@ -52,7 +36,7 @@ describe('Event', function () {
     });
 
 
-    it("can define function", function () {
+    it("can define functions", function () {
       class EventWitgFunction extends Event {
         constructor(type, payload) {
           super(type, payload);

@@ -12,7 +12,6 @@ import {Search} from './search/search.js';
 import { createRedux } from 'redux';
 import {Provider} from 'redux/react';
 import * as stores from './stores';
-import Event from "./cqrs/Event.js";
 
 require('../less/main.less');
 
