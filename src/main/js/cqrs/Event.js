@@ -14,7 +14,7 @@ export default class Event {
     if(type === null){
       throw "Type is mandatory";
     }
-    this.uuid = Uuid.v4();
+    this.uuid = Uuid.v4(); // what if restoring event ?
     this.type = type;
     this.payload = payloadOrNull;
     Object.freeze(this);
