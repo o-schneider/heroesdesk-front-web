@@ -1,7 +1,7 @@
 'use strict';
 
-import Event from '../../../main/js/cqrs/Event';
-import {eventBus} from '../../../main/js/cqrs/EventBus';
+import Event from '../../../main/js/event/Event';
+import {eventBus} from '../../../main/js/event/EventBus';
 import assert from 'assert';
 import {EventEmitter} from 'events';
 
@@ -30,7 +30,6 @@ describe('EventBus publishing', function () {
 
   it("effectively emits events", function (done) {
     const eventType = "eventType";
-    const eventEmitter = new EventEmitter();
     eventBus.subscribe(eventType, () => {
       done();
     });

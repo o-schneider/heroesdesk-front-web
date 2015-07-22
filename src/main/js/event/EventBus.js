@@ -17,7 +17,6 @@ class EventBus {
       throw "Publish works only on events";
     }
     eventEmitter.emit(event.type, event);
-    console.log("published on " + event.type);
     return;
   }
 

@@ -20,12 +20,7 @@ export default class Desk {
     const actions = bindActionCreators(IssueActions, dispatch);
     return (
       <div>
-        <button onClick={() => {console.log("fuck"); actions.createIssue(Uuid.v4());} }>CLICK MEEEEE</button>
-        // onClick:
-        // uuid
-        // listenStyore onUuid
-        // createNewEvent fired uuid
-        //
+        <button onClick={() => {actions.createIssue(Uuid.v4());} }>CLICK MEEEEE</button>
         Number of issues {issues.length}
       </div>
     );
