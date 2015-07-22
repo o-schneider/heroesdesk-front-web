@@ -1,7 +1,7 @@
 'use strict';
 
-import Event from '../../../main/js/event/Event';
-import {eventBus} from '../../../main/js/event/EventBus';
+import Event from '../../../../main/js/cqrs/event/Event';
+import {eventBus} from '../../../../main/js/cqrs/event/EventBus';
 import assert from 'assert';
 import {EventEmitter} from 'events';
 

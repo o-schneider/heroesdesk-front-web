@@ -1,6 +1,6 @@
 'use strict';
 
-import Event from '../../../main/js/event/Event';
+import Event from '../../../../main/js/cqrs/event/Event';
 import assert from 'assert';
 
 describe('Event', function () {
