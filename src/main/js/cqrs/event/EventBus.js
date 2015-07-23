@@ -1,28 +1,16 @@
 'use strict';
 
-import {EventEmitter} from 'events';
+import MessageBus from '../message/MessageBus';
 import Event from './Event';
 
-let eventEmitter = null;
+class EventBus extends MessageBus {
 
-class EventBus {
-  constructor() {
-    if (!eventEmitter) {
-      eventEmitter = new EventEmitter();
-    }
-  }
-
-  publish(event) {
+  checkPublish(event) {
+    super.checkPublish(event);
     if (!(event instanceof Event )) {
       throw "Publish works only on events";
     }
-    eventEmitter.emit(event.type, event);
-    return;
   }
 
-  subscribe(eventType, callback) {
-    eventEmitter.on(eventType, callback);
-    return;
-  }
 }
 export const eventBus = new EventBus();

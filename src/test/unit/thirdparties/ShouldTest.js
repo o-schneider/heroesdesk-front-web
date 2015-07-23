@@ -2,7 +2,7 @@
 
 import should from "should";
 
-describe('Should', function(){
+describe('Should library', function(){
     it('works on object properties', function(){
       const user = {
         name: 'tj'

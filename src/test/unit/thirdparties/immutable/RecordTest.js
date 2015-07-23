@@ -14,7 +14,7 @@ class ChildWithFunction extends Parent {
   }
 }
 
-describe('Record', function () {
+describe('Immutable Record', function () {
   describe('handle equals', function () {
     it('based on keys only', function () {
       assert(new Parent({title: "foo"}).equals(new Parent({title: "foo"})));

@@ -2,6 +2,6 @@
 
 import Message from '../message/Message';
 
-export default class Event extends Message {
+export default class Command extends Message {
 
 }

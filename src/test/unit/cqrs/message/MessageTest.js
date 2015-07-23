@@ -1,43 +1,43 @@
 'use strict';
 
-import Event from '../../../../main/js/cqrs/event/Event';
+import Message from '../../../../main/js/cqrs/message/Message';
 import assert from 'assert';
 
-describe('Event', function () {
+describe('Message', function () {
   it("has an uuid", function () {
-    assert(new Event("foo", "bar").uuid !== null);
+    assert(new Message("foo", "bar").uuid !== null);
   });
   it("throws Error if no type provided", function () {
     assert.throws(function () {
-      new Event(null, "bar");
+      new Message(null, "bar");
     });
   });
   describe('subclasses', function () {
-    it("cannot add keys outside of Event's payload", function () {
-      class BrokenEvent extends Event {
+    it("cannot add keys outside of Message's payload", function () {
+      class BrokenMessage extends Message {
         constructor(bar, foo) {
           super(bar, foo);
           this.combination = bar + foo; // doesn't work, object of the test !!
         }
       }
       assert.throws(function () {
-        new BrokenEvent("t", "oc");
+        new BrokenMessage("t", "oc");
       }, TypeError);
     });
 
     it("can provide payload", function () {
-      class WorkingEvent extends Event {
+      class WorkingMessage extends Message {
         constructor(type, payload) {
           super(type, payload);
         }
       }
       const payload = "payload";
-      assert.equal(payload, new WorkingEvent("WorkingEvent", payload).payload);
+      assert.equal(payload, new WorkingMessage("WorkingMessage", payload).payload);
     });
 
 
     it("can define functions", function () {
-      class EventWitgFunction extends Event {
+      class MessageWitgFunction extends Message {
         constructor(type, payload) {
           super(type, payload);
         }
@@ -47,7 +47,7 @@ describe('Event', function () {
         }
       }
       const payload = "payload";
-      assert.equal("nice" + payload, new EventWitgFunction("WorkingEvent", payload).nicePayload());
+      assert.equal("nice" + payload, new MessageWitgFunction("WorkingMessage", payload).nicePayload());
     });
   });
 });
