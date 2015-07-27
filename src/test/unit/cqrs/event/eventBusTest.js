@@ -1,13 +1,12 @@
 'use strict';
 
 import Message from '../../../../main/js/cqrs/message/Message';
-import {eventBus} from '../../../../main/js/cqrs/event/eventBus';
+import EventBus from '../../../../main/js/cqrs/event/EventBus';
 import Event from '../../../../main/js/cqrs/event/Event';
 import assert from 'assert';
-import {fakeEventListener} from './fakeEventListener';
 
 describe('eventBus', function () {
-
+  const eventBus = new EventBus();
   it("publishes  events", function () {
     eventBus.publish(new Event("type"));
   });
@@ -31,18 +30,6 @@ describe('eventBus', function () {
     assert.throws(function () {
       eventBus.publish(null);
     });
-  });
-
-  it('is the same across modules', function (done) {
-    const fromType = "from";
-    const toType = "to";
-    const payload = "foo";
-    eventBus.subscribe(toType, (e) => {
-      assert(e.payload === payload);
-      done();
-    });
-    fakeEventListener.echo(fromType, toType)
-    eventBus.publish(new Event(fromType, payload));
   });
 
   it('allows publishing even if no subscriber', function () {

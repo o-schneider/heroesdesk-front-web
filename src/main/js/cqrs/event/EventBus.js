@@ -3,7 +3,7 @@
 import MessageBus from '../message/MessageBus';
 import Event from './Event';
 
-class EventBus extends MessageBus {
+export default class EventBus extends MessageBus {
 
   checkPublish(event) {
     super.checkPublish(event);
@@ -13,4 +13,3 @@ class EventBus extends MessageBus {
   }
 
 }
-export const eventBus = new EventBus();
