@@ -5,9 +5,9 @@ import Router from 'react-router';
 import ReactBootstrap from 'react-bootstrap';
 import ReactRouterBootstrap from 'react-router-bootstrap';
 
-import Desk from './desk/desk.js';
-import Issue from './issue/issue.js';
-import {Search} from './search/search.js';
+import Desk from './desk/Desk.js';
+import Issue from './issue/Issue.js';
+import {Search} from './search/Search.js';
 
 import { createRedux } from 'redux';
 import {Provider} from 'redux/react';

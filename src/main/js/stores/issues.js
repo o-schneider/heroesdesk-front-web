@@ -1,6 +1,6 @@
 "use strict";
 
-import {CREATE_ISSUE} from '../issue/actions';
+import {CREATE_ISSUE} from '../issue/Actions';
 
 const initialState = [{
   name: 'Trial-1',

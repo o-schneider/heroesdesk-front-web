@@ -4,7 +4,7 @@ import React from 'react';
 import { bindActionCreators } from 'redux';
 import { Connector } from 'redux/react';
 import Uuid from 'node-uuid';
-import * as IssueActions from '../issue/actions.js';
+import * as IssueActions from '../issue/Actions.js';
 
 export default class Desk {
 
