@@ -10,7 +10,7 @@
     "dev-test": "node src/server/devTest.js",
     "build": "node src/server/package.js",
     "test": "./node_modules/.bin/mocha --check-leaks --throw-deprecation --growl --bail --recursive --compilers js:babel/register src/test/unit src/test/ui",
-    "test-unit": "./node_modules/.bin/mocha --check-leaks --throw-deprecation --growl --bail --recursive --compilers js:babel/register src/test/unit",
+    "test-unit": "./node_modules/.bin/mocha --check-leaks --throw-deprecation --growl --recursive --compilers js:babel/register src/test/unit",
     "test-ui": "./node_modules/.bin/mocha --check-leaks --throw-deprecation --growl --bail --recursive --compilers js:babel/register src/test/ui"
   },
   "dependencies": {
@@ -23,7 +23,8 @@
     "react-router-bootstrap": "^0.16.0",
     "node-uuid": "^1.4.3",
     "immutable":"^3.7.4",
-    "redux" : "^0.12.0"
+    "redux" : "^0.12.0",
+    "lodash" : "^3.10.0"
   },
   "devDependencies": {
     "babel": "^5.6.5",
