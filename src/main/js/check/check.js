@@ -4,6 +4,9 @@ import _ from "lodash";
 
 class Check {
   notNull(parameters) {
+    if(parameters == null){
+      throw new Error("Null object parameters given ");
+    }
     if (_.some(parameters, function (n) {
         return n == null;
       })) {
