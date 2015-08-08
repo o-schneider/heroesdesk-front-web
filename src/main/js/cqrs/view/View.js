@@ -4,26 +4,32 @@ import '../event/EventBus';
 import {check} from '../../check/check';
 import _ from 'lodash';
 
+const log = false;
+
 export default class View {
-  constructor(eventBus, listenedEventTypes) {
-    check.notNull({'eventBus': eventBus, 'listenedEventTypes': listenedEventTypes});
-    this.eventBus = eventBus;
-    this.listenedEventTypes = listenedEventTypes;
-    this.init();
-  }
 
-  init() {
+  constructor(eventBus, ...listenedEventTypesAndActions) {
+    check.notNull({'eventBus': eventBus});
+    check.true("listenedEventTypesAndActions should contain at least one type and action", function () {
+      return listenedEventTypesAndActions != null && listenedEventTypesAndActions.length != 0;
+    });
 
-    const eventBus = this.eventBus;
-    _.forEach(this.listenedEventTypes, function (eventType) {
-      eventBus.subscribe(eventType, function (message) {
-          on(eventType, message);
+    const view = this;
+    _.forEach(listenedEventTypesAndActions, (actionAndType) => {
+      const type = actionAndType.type;
+      const action = actionAndType.action;
+
+      if (log) console.log('about to register type ' + type + " and action " + action);
+
+      check.true("type and action both present", () => {
+        return typeof type === "string" && action instanceof Function
       });
 
+      eventBus.subscribe(type, (message)=> {
+        console.log("view ? " + (view instanceof View) + ", counter ? " + view.counter) ;
+        action.call(null, message,view);
+      });
     });
   }
 
-  on(eventType, message){
-
-  }
 }
