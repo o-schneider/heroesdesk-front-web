@@ -4,7 +4,7 @@ import _ from "lodash";
 
 class Check {
   notNull(parameters) {
-    if(parameters == null){
+    if (parameters == null) {
       throw new Error("Null object parameters given ");
     }
     if (_.some(parameters, function (n) {
@@ -20,6 +20,13 @@ class Check {
         return result;
       }, {});
       throw new Error("One of more null parameters in " + result);
+    }
+  }
+
+  true(description, truthyFunction) {
+    this.notNull({'description': description, 'truthyFunction': truthyFunction});
+    if(truthyFunction() == false){
+      throw new Error(description + " not true");
     }
   }
 }
