@@ -35,7 +35,7 @@ describe('MessageBus publishing', function () {
 
   it("effectively emits messages", function (done) {
     const messageType = "messageType";
-    messageBus.subscribe(messageType, () => {
+    messageBus.subscribe(messageType, (a) => {
       done();
     });
     messageBus.publish(new Message(messageType, "payload"));

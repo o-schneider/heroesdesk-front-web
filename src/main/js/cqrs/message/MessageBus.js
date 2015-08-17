@@ -29,7 +29,7 @@ export default class MessageBus {
 
   checkPublish(message) {
     if (!(message instanceof Message )) {
-      throw "Publish works only on instances of Message";
+      throw new Error("Publish works only on instances of Message");
     }
   }
 }

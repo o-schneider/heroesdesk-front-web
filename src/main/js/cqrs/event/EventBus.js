@@ -8,7 +8,7 @@ export default class EventBus extends MessageBus {
   checkPublish(event) {
     super.checkPublish(event);
     if (!(event instanceof Event )) {
-      throw "Publish works only on events";
+      throw new Error("Publish works only on events");
     }
   }
 

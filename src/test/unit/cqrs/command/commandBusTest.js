@@ -1,6 +1,7 @@
 'use strict';
 
 import CommandBus from '../../../../main/js/cqrs/command/CommandBus';
+import Command from '../../../../main/js/cqrs/command/Command';
 import assert from 'assert';
 
 describe('commandBus', function () {
@@ -10,5 +11,33 @@ describe('commandBus', function () {
     assert.throws(function () {
       commandBus.publish(new Command("type"));
     });
+  });
+
+  it("throws when adding a subscriber to some command type already listened to", function () {
+    const commandBus = new CommandBus();
+    const messageType = "testType";
+    commandBus.subscribe(messageType, function () {
+    });
+    assert.throws(function () {
+      commandBus.subscribe(messageType, function () {
+      });
+    });
+  });
+
+  it("works", function(done){
+
+    const commandBus = new CommandBus();
+    const messageType = "testType";
+    var called = 0;
+    commandBus.subscribe(messageType, function (message) {
+      called += message.payload;
+      if(called >= 6){
+        done();
+      }
+
+    });
+    commandBus.publish(new Command(messageType,3));
+    commandBus.publish(new Command(messageType,2));
+    commandBus.publish(new Command(messageType,1));
   });
 });

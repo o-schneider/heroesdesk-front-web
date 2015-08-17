@@ -26,7 +26,6 @@ export default class View {
       });
 
       eventBus.subscribe(type, (message)=> {
-        console.log("view ? " + (view instanceof View) + ", counter ? " + view.counter) ;
         action.call(null, message,view);
       });
     });
