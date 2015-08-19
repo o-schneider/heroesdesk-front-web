@@ -1,6 +1,7 @@
 'use strict';
 
 import '../event/EventBus';
+import {EventEmitter} from 'events';
 import {check} from '../../check/check';
 import _ from 'lodash';
 
@@ -26,9 +27,17 @@ export default class View {
       });
 
       eventBus.subscribe(type, (message)=> {
-        action.call(null, message,view);
+        action.call(null, message, view);
+        view.changed();
       });
     });
+    this.messageEmitter = new EventEmitter();
   }
 
+  changed() { this.messageEmitter.emit('change'); }
+
+  watch(cbk) {
+    this.messageEmitter.on('change', cbk);
+    return () => this.messageEmitter.removeListener('change', cbk);
+  }
 }

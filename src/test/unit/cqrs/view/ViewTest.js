@@ -154,5 +154,28 @@ describe('View', function () {
     eventBus.publish(new Event(type1));
     eventBus.publish(new Event(type1));
   });
+
+  it("notify watchers after each event handling", function (done) {
+    class CounterView extends View {
+      constructor(eventBus, ...listenedEventTypesAndActions) {
+        super(eventBus, ...listenedEventTypesAndActions);
+        this.counter = 0;
+      }
+    }
+    const eventBus = new EventBus();
+    const type = "messageType";
+    const view = new CounterView(eventBus,
+      {
+        'type': type,
+        'action': (message, view) => {
+          view.counter += 1;
+        }
+      }
+    );
+    view.watch(function(){
+        done();
+    });
+    eventBus.publish(new Event(type));
+  });
 })
 ;
