@@ -1,8 +1,8 @@
 'use strict';
 
-import View from '../../../../main/js/cqrs/view/View';
-import EventBus from '../../../../main/js/cqrs/event/EventBus';
-import Event from '../../../../main/js/cqrs/event/Event';
+import {View} from 'cqrsjs';
+import {EventBus} from 'cqrsjs';
+import {Event} from 'cqrsjs';
 import assert from 'assert';
 
 
@@ -177,5 +177,4 @@ describe('View', function () {
     });
     eventBus.publish(new Event(type));
   });
-})
-;
+});

@@ -1,12 +1,14 @@
 'use strict';
 
-import Message from '../../../../main/js/cqrs/message/Message';
-import EventBus from '../../../../main/js/cqrs/event/EventBus';
-import Event from '../../../../main/js/cqrs/event/Event';
+import {Message} from 'cqrsjs';
+import {EventBus} from 'cqrsjs';
+import {Event} from 'cqrsjs';
 import assert from 'assert';
 
 describe('eventBus', function () {
+  console.log(Message, EventBus, Event);
   const eventBus = new EventBus();
+
   it("publishes  events", function () {
     eventBus.publish(new Event("type"));
   });

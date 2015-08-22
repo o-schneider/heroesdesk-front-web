@@ -1,7 +1,7 @@
 'use strict';
 
 import assert from 'assert';
-import {check} from '../../../main/js/check/check';
+import {check} from 'cqrsjs';
 
 describe('Check', function () {
 

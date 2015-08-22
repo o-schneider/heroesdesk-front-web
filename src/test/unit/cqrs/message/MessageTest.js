@@ -1,6 +1,6 @@
 'use strict';
 
-import Message from '../../../../main/js/cqrs/message/Message';
+import {Message} from 'cqrsjs';
 import assert from 'assert';
 
 describe('Message', function () {
