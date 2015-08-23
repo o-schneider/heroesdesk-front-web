@@ -1,8 +1,8 @@
 'use strict';
 
-import {View} from 'cqrsjs';
-import {EventBus} from 'cqrsjs';
-import {Event} from 'cqrsjs';
+import {View} from 'cqrs4js';
+import {EventBus} from 'cqrs4js';
+import {Event} from 'cqrs4js';
 import assert from 'assert';
 
 

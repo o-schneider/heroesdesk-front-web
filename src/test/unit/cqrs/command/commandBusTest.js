@@ -1,7 +1,7 @@
 'use strict';
 
-import {CommandBus} from 'cqrsjs';
-import {Command} from 'cqrsjs';
+import {CommandBus} from 'cqrs4js';
+import {Command} from 'cqrs4js';
 import assert from 'assert';
 
 describe('commandBus', function () {

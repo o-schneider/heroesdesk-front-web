@@ -1,7 +1,7 @@
 'use strict';
 
-import {Message} from 'cqrsjs';
-import {MessageBus} from 'cqrsjs';
+import {Message} from 'cqrs4js';
+import {MessageBus} from 'cqrs4js';
 import assert from 'assert';
 
 describe('MessageBus publishing', function () {

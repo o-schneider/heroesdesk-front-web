@@ -1,8 +1,8 @@
 'use strict';
 
-import {Message} from 'cqrsjs';
-import {EventBus} from 'cqrsjs';
-import {Event} from 'cqrsjs';
+import {Message} from 'cqrs4js';
+import {EventBus} from 'cqrs4js';
+import {Event} from 'cqrs4js';
 import assert from 'assert';
 
 describe('eventBus', function () {

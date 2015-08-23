@@ -15,7 +15,7 @@
   },
   "dependencies": {
     "bootstrap": "^3.3.2",
-    "cqrsjs": "git+https://github.com/o-schneider/cqrsjs.git",
+    "cqrs4js": "0.0.1",
     "express": "^4.12.2",
     "immutable": "^3.7.4",
     "jquery": "^2.1.3",
